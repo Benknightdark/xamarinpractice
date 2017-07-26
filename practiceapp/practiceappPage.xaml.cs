@@ -4,12 +4,13 @@ namespace practiceapp
 {
     public partial class practiceappPage : ContentPage
     {
-        private   info Info;
+        private   InfoViewModel Info;
         public practiceappPage()
         {
             InitializeComponent();
-            Info = new info();
-            entry.BindingContext = Info;
+            Info = new InfoViewModel();
+            this.BindingContext = Info;
+
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)

@@ -3,6 +3,11 @@
 <StackLayout>
     <Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
     <Entry x:Name="entry" Placeholder="key me" Text="{Binding Name,Mode=TwoWay}"></Entry>
+        <Picker x:Name="picker" ItemsSource="{Binding GenderList}"
+        ItemDisplayBinding="{Binding DisPlayName}"
+        SelectedIndex="{Binding GenderIndex,Mode=TwoWay}"></Picker>
+
     <Button Text="click" Clicked="Handle_Clicked"></Button>
+        
         </StackLayout>
 </ContentPage>

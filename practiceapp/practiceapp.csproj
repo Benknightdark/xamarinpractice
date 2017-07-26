@@ -39,7 +39,9 @@
       <DependentUpon>practiceappPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="info.cs" />
+    <Compile Include="InfoModel.cs" />
+    <Compile Include="InfoViewModel.cs" />
+    <Compile Include="GenderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
