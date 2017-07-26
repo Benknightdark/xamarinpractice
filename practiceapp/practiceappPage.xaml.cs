@@ -15,9 +15,10 @@ namespace practiceapp
 
         void Handle_Clicked(object sender, System.EventArgs e)
         {
-            Info.Name = "fdsfasdfasd1111" + entry.Text.ToString();
+           // Info.Name = "fdsfasdfasd1111" + entry.Text.ToString();
+          //  Info.Bonus=100;
            // DisplayAlert(string.Empty, Info.Name.ToString(),"ok");
-   
+
         }
 
        

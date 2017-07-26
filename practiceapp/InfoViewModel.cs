@@ -3,18 +3,20 @@ using System.Collections.Generic;
 
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Input;
+using Xamarin.Forms;
+
 namespace practiceapp
 {
 	public class InfoViewModel : INotifyPropertyChanged
 	{
 		public InfoViewModel()
 		{
-			//_name = "test";
-			//Name = "test";
             this.GenderList = new List<GenderViewModel>(){
                 new GenderViewModel(){Gender=Gender.Boy,DisPlayName="Boy"},
                 new GenderViewModel(){Gender=Gender.Girl,DisPlayName="Girl"}
             };
+            OnSaveInfo = new Command(() => { this.Bonus = 100;this.Name = "fdsfasdfasd1111"; },()=> { return true; });
 		}
 
 		public string Name
@@ -47,6 +49,21 @@ namespace practiceapp
 			}
            
         }
+        public int Bonus{
+            get { return this._model.Bonus; }
+            set{
+                this._model.Bonus = value;
+
+			this.PropertyChanged?.DynamicInvoke(this, new PropertyChangedEventArgs(nameof(this.Bonus)));
+                this.PropertyChanged?.DynamicInvoke(this, new PropertyChangedEventArgs(nameof(this.IsBonusGreaterZero)));
+			}
+        }
+        public bool IsBonusGreaterZero{
+            get {
+                return this._model.Bonus > 0;
+            }
+        }
+        public ICommand OnSaveInfo { get; private set; } 
         //private string _name;
         private InfoModel _model = new InfoModel();
 		public event PropertyChangedEventHandler PropertyChanged;
